@@ -15,7 +15,7 @@ app.use(cookieParser());
 databaseConfig()
 
 app.use(router);
-app.use((err, req, res, next) => {
+app.use((err, req, res) => {
     console.error(err.stack);
     res.status(500).send('Something went wrong!');
 });
