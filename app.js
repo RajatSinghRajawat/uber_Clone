@@ -6,13 +6,13 @@ const databaseConfig = require('./src/config/uberConfig');
 const router = require('./src/routes/uberRoutes');
 const cookieParser = require('cookie-parser');
 const app = express();
+app.use(cors());
+databaseConfig()
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
 app.use(cookieParser());
 
-databaseConfig()
 
 app.use(router);
 app.use((err, req, res) => {

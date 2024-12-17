@@ -7,10 +7,8 @@ const createUser = async ({ fullName, email, password }) => {
             throw new Error("All user details are required");
         }
 
-        // Hash password
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        // Create the user
         const user = await uberModel.create({
             fullName: {
                 firstName: fullName.firstName,
