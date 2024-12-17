@@ -9,15 +9,18 @@ const createUser = async ({ fullName, email, password }) => {
 
         const hashedPassword = await bcrypt.hash(password, 10);
 
+        console.log("name   ",fullName);
+        
+
         const user = await uberModel.create({
-            fullName: {
-                firstName: fullName.firstName,
-                lastName: fullName.lastName,
-            },
+            fullName,
             email,
             password: hashedPassword,
         });
 
+        const u = await uberModel.findById('67613ba6c85a73e9c8e42d2f')
+
+        console.log(u , "uuu")
         return user;
     } catch (error) {
         throw error;
