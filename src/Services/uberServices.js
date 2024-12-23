@@ -18,9 +18,9 @@ const createUser = async ({ fullName, email, password }) => {
             password: hashedPassword,
         });
 
-        const u = await uberModel.findById('67613ba6c85a73e9c8e42d2f')
+        // const u = await uberModel.findById('67613ba6c85a73e9c8e42d2f')
 
-        console.log(u , "uuu")
+        // console.log(u , "uuu")
         return user;
     } catch (error) {
         throw error;

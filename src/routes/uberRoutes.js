@@ -1,8 +1,9 @@
 const express = require('express')
 
 const { body } = require('express-validator')
-const { registerUser, loginUser } = require('../controller/uberController')
+const { registerUser, loginUser, getProfile } = require('../controller/uberController')
 const { validationResult } = require('express-validator')
+const verification = require('../middlware/verify')
 
 const router = express.Router()
 
@@ -14,13 +15,13 @@ router.post('/register', [
 ], registerUser)
 
 
-router.post('/register', [
+router.post('/loginuser', [
     body('email').isEmail().withMessage('Invalid Email'),
     body('password').isLength({ min: 6 }).withMessage('password must be atLeast 6 number')
 
 ], loginUser)
 
-// router.post('/register' , registerUser)
+router.get('/profile' , verification, getProfile)
 
 
 module.exports = router

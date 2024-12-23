@@ -15,10 +15,10 @@ app.use(cookieParser());
 
 
 app.use(router);
-app.use((err, req, res) => {
-    console.error(err.stack);
-    res.status(500).send('Something went wrong!');
-});
+// app.use((err, req, res) => {
+//     console.error(err.stack);
+//     res.status(500).send('Something went wrong!');
+// });
 
 module.exports = app;
 
