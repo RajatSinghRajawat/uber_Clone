@@ -6,7 +6,10 @@ const UBerSchema = new mongoose.Schema({
         lastName: { type: String, required: true,  }
     },
     email: { type: String, required: true, unique: true},
-    password: { type: String, required: true  }
+    password: { type: String, required: true  },
+    socketId:{
+        type:String
+    }
 }, {
     timestamps: true
 });
