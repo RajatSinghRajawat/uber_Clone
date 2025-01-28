@@ -52,6 +52,6 @@ const captainSchema = new mongoose.Schema({
 
 })
 
-const captainModel = mongoose.model('capitais',captainSchema)
+const captainModel = mongoose.model('CaptainDetails',captainSchema)
 
 module.exports = captainModel

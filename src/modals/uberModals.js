@@ -13,7 +13,7 @@ const UBerSchema = new mongoose.Schema({
 }, {
     timestamps: true
 });
-const uberModel = mongoose.model('Uber', UBerSchema);
+const uberModel = mongoose.model('UserDetails', UBerSchema);
 
 
 module.exports = uberModel

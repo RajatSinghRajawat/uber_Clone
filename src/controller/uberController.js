@@ -60,8 +60,6 @@ const registerUser = async (req, res) => {
     }
 };
 
-
-
 const loginUser = async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -97,6 +95,7 @@ const loginUser = async (req, res) => {
         res.status(500).json({ message: "Internal server error", error: error.message });
     }
 };
+
 const getProfile = async (req, res) => {
     // console.log(req.user); 
     if (!req.user) {

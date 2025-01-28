@@ -28,7 +28,7 @@ const registerCaptain = async (req, res) => {
             password,
             vehicle
         });
-        console.log(vehicle.capacity, "sssssssssssssssssss");
+        // console.log(vehicle.capacity, "sssssssssssssssssss");
 
 
         const token = jwt.sign(
@@ -49,7 +49,7 @@ const loginCaptain = async (req, res) => {
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
     }
-    console.log(req.body);
+    // console.log(req.body);
 
     try {
         const { email, password } = req.body;
@@ -69,7 +69,7 @@ const loginCaptain = async (req, res) => {
             email: captainFind.email
         };
         const token = jwt.sign(payload, process.env.captain_secret, { expiresIn: "24h" });
-        console.log(token);
+        // console.log(token);
 
         await captainModel.findByIdAndUpdate(captainFind._id, { token });
 
